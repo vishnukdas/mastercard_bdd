@@ -1,0 +1,32 @@
+name: HyperExecute Tests
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  hyperexecute:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - hyperexecute-api.yaml
+          - hyperexecute-regression.yaml
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download HyperExecute CLI
+        run: |
+          curl -sSLo hyperexecute https://downloads.lambdatest.com/hyperexecute/linux/hyperexecute
+          chmod +x hyperexecute
+
+      - name: Run HyperExecute job
+        env:
+          LT_USERNAME: ${{ secrets.LT_USERNAME }}
+          LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
+        run: |
+          ./hyperexecute --user "$LT_USERNAME" --key "$LT_ACCESS_KEY" --config "${{ matrix.config }}"

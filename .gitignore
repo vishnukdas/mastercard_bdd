@@ -1,0 +1,8 @@
+hyperexecute
+hyperexecute-cli.log
+.updatedhyperexecute.yaml
+target/
+jmeter.log
+results.jtl
+snooper.log
+.hyperexecute
