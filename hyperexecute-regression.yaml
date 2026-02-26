@@ -39,6 +39,9 @@ testDiscovery:
 # Run a single discovered test entity (use cached .m2)
 testRunnerCommand: mvn `-Dmaven.repo.local=./.m2 test `-Dcucumber.features="$test"
 
+# Job labels for easier filtering
+jobLabel: ["regression", "mastercard"]
+
 # Retry failed tests
 retryOnFailure: true
 maxRetries: 1
