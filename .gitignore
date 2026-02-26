@@ -6,3 +6,4 @@ jmeter.log
 results.jtl
 snooper.log
 .hyperexecute
+allure-results

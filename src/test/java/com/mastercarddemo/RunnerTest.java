@@ -14,5 +14,6 @@ import org.junit.platform.suite.api.Suite;
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.mastercarddemo.steps")
 @ConfigurationParameter(
     key = PLUGIN_PROPERTY_NAME,
-    value = "pretty, summary, html:target/cucumber-report.html, json:target/cucumber-report.json")
+    value =
+        "pretty, summary, html:target/cucumber-report.html, json:target/cucumber-report.json, io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm")
 public class RunnerTest {}

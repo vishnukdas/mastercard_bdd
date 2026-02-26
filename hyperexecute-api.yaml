@@ -14,11 +14,18 @@ runtime:
   - language: java
     version: "17"
 
+
+
 # Cache key to reuse dependencies between runs
 cacheKey: '{{ checksum "pom.xml" }}'
 # Cache Maven repository
 cacheDirectories:
   - .m2
+
+# Project metadata for HyperExecute
+project:
+  name: "Mastercard UI + API"
+  id: "01KJC83R0NWS0W4HNP6G5WCVC7"
 
 # Global pre-steps to prepare dependencies once
 globalPre:
@@ -49,12 +56,12 @@ maxRetries: 1
 # Use scenario command status for overall status
 scenarioCommandStatusOnly: true
 
-# Upload Cucumber JSON report
+# Upload Cucumber JSON + Allure reports
 report: true
 partialReports:
-  location: target/cucumber-report.json
-  frameworkName: cucumber
-  type: json
+  - location: target
+    frameworkName: allure
+    type: html
 
 betaFeature:
   skipQueueOverride: true

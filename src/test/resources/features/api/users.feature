@@ -14,3 +14,15 @@ Feature: JSONPlaceholder users API
     When I send a GET request to "/users"
     Then the response status should be 200
     And the response body should contain "username"
+
+  Scenario: Get user todos
+    Given the API base URL is "https://jsonplaceholder.typicode.com"
+    When I send a GET request to "/users/1/todos"
+    Then the response status should be 200
+    And the response body should contain "completed"
+
+  Scenario: Get user albums
+    Given the API base URL is "https://jsonplaceholder.typicode.com"
+    When I send a GET request to "/users/1/albums"
+    Then the response status should be 200
+    And the response body should contain "title"

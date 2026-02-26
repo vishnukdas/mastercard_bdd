@@ -20,6 +20,11 @@ cacheKey: '{{ checksum "pom.xml" }}'
 cacheDirectories:
   - .m2
 
+# Project metadata for HyperExecute
+project:
+  name: "Mastercard UI + API"
+  id: "01KJC83R0NWS0W4HNP6G5WCVC7"
+
 # Global pre-steps to prepare dependencies once
 globalPre:
   mode: remote

@@ -18,3 +18,17 @@ Set these environment variables before running tests:
 ```
 mvn test
 ```
+
+## Allure (API tests)
+
+Run only API scenarios and generate Allure results:
+
+```
+mvn test -Dcucumber.filter.tags="@api"
+```
+
+Then serve the report locally (requires Allure CLI):
+
+```
+allure serve target/allure-results
+```
