@@ -55,7 +55,7 @@ maxRetries: 1
 # Upload Cucumber JSON report
 report: true
 partialReports:
-  location: target/cucumber-report.json
+  location: target/
   frameworkName: cucumber
   type: json
 
