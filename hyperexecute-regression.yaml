@@ -46,8 +46,6 @@ jobLabel: ["regression", "mastercard"]
 retryOnFailure: true
 maxRetries: 1
 
-# Use scenario command status for overall status
-scenarioCommandStatusOnly: true
 
 # Upload Cucumber JSON report
 report: true
